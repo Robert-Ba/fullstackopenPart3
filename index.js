@@ -1,9 +1,21 @@
 const express = require('express')
+const morgan = require('morgan')
+
 const app = express()
 
 const PORT = 3001
 
 app.use(express.json())
+
+// Create a morgan token to get the body of a post request.
+morgan.token('body', function (req, res) { 
+  if(req.method === 'POST') {
+    return JSON.stringify(req.body)
+  } else {
+    return ''
+  }
+})
+app.use(morgan(':method :url :status :res[content-length] - :response-time ms :body'))
 
 // hardcoded persons data
 let persons = [
