@@ -1,10 +1,11 @@
 const express = require('express')
 const morgan = require('morgan')
+const cors = require('cors')
 
+const PORT = process.env.PORT || 3001
 const app = express()
 
-const PORT = 3001
-
+app.use(cors())
 app.use(express.json())
 
 // Create a morgan token to get the body of a post request.
@@ -40,6 +41,8 @@ let persons = [
     "number": "39-23-6423122"
   }
 ]
+
+app.use(express.static('./dist'))
 
 // Return all persons
 app.get('/api/persons', (req, res) => {

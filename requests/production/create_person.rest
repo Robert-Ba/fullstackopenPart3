@@ -1,0 +1,7 @@
+POST https://fullstackopenpartthree.fly.dev/api/persons
+Content-Type: application/json
+
+{
+  "name": "ANNE",
+  "number": "12312344"
+}
