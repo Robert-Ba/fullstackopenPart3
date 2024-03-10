@@ -23,3 +23,7 @@ Online application: https://fullstackopenpartthree.fly.dev/info
 
 ### 3.11
 Updated scripts in package.json to support npm run deploy:full command. This will create a dist folder for the UI that express will server as a static file.
+
+### 3.12
+https://fullstackopen.com/en/part3/saving_data_to_mongo_db#exercise-3-12
+Added mongoose as an ODM to save and retrieve documents on MongoDB.
